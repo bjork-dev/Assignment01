@@ -69,5 +69,15 @@ namespace Assignment
             "Antal svenska bokstäver: 0, antal danska bokstäver: 1"
             }, console.Lines);
         }
+        [TestMethod]
+        public void Engelska()
+        {
+            using FakeConsole console = new FakeConsole("Hello, World!");
+            Program.Main();
+            CollectionAssert.AreEqual(new[] {
+            "Texten verkar inte vara på svenska eller danska",
+            "Antal svenska bokstäver: 0, antal danska bokstäver: 0"
+            }, console.Lines);
+        }
     }
 }
