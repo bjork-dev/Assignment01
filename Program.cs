@@ -14,6 +14,7 @@ namespace Assignment
             Console.Write("Skriv in din text: ");
             string text = Console.ReadLine();
             int counter = 0;
+            int danishCounter = 0;
 
             foreach (char letter in text)
             {
@@ -21,18 +22,26 @@ namespace Assignment
                 {
                     counter++;
                 }
+                if (letter == 'Æ' || letter == 'æ' || letter == 'Ø' || letter == 'ø' || letter == 'Å' || letter == 'å')
+                {
+                    danishCounter++;
+                }
             }
 
-            if (counter > 0)
+            if (counter > danishCounter)
             {
                 Console.WriteLine("Texten verkar vara på svenska");
             }
+            else if (danishCounter > counter)
+            {
+                Console.WriteLine("Texten verkar vara på danska");
+            }
             else
             {
-                Console.WriteLine("Texten verkar inte vara på svenska");
+                Console.WriteLine("Texten verkar inte vara på svenska eller danska");
             }
 
-            Console.WriteLine("Antal svenska bokstäver: " + counter);
+            Console.WriteLine($"Antal svenska bokstäver: {counter}, antal danska bokstäver: {danishCounter}");
         }
     }
 
@@ -46,7 +55,7 @@ namespace Assignment
             Program.Main();
             CollectionAssert.AreEqual(new[] {
             "Texten verkar vara på svenska",
-            "Antal svenska bokstäver: 12"
+            "Antal svenska bokstäver: 12, antal danska bokstäver: 2"
             }, console.Lines);
         }
 
@@ -56,8 +65,8 @@ namespace Assignment
             using FakeConsole console = new FakeConsole("København er Danmarks hovedstad");
             Program.Main();
             CollectionAssert.AreEqual(new[] {
-            "Texten verkar inte vara på svenska",
-            "Antal svenska bokstäver: 0"
+            "Texten verkar vara på danska",
+            "Antal svenska bokstäver: 0, antal danska bokstäver: 1"
             }, console.Lines);
         }
     }
