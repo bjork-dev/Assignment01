@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace grund
+namespace Assignment
 {
     // This class is needed for testing console applications. Do not change or remove it.
     class FakeConsole : IDisposable

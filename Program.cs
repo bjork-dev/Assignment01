@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace grund
+namespace Assignment
 {
     public class Program
     {
@@ -14,7 +14,7 @@ namespace grund
             Console.Write("Skriv in din text: ");
             string text = Console.ReadLine();
             int counter = 0;
-            
+
             foreach (char letter in text)
             {
                 if (letter == 'Å' || letter == 'å' || letter == 'Ä' || letter == 'ä' || letter == 'Ö' || letter == 'ö')
