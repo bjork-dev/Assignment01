@@ -11,11 +11,14 @@ namespace Assignment
             // We need this to make sure we can always use periods for decimal points.
             CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
 
+
+            //Input
             Console.Write("Skriv in din text: ");
             string text = Console.ReadLine();
             int counter = 0;
             int danishCounter = 0;
-
+            
+            //Calculation
             foreach (char letter in text)
             {
                 if (letter == 'Å' || letter == 'å' || letter == 'Ä' || letter == 'ä' || letter == 'Ö' || letter == 'ö')
@@ -28,6 +31,7 @@ namespace Assignment
                 }
             }
 
+            //Output
             if (counter > danishCounter)
             {
                 Console.WriteLine("Texten verkar vara på svenska");
@@ -44,6 +48,8 @@ namespace Assignment
             Console.WriteLine($"Antal svenska bokstäver: {counter}, antal danska bokstäver: {danishCounter}");
         }
     }
+
+    //Tests
 
     [TestClass]
     public class ProgramTests
