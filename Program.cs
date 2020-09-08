@@ -32,7 +32,7 @@ namespace Assignment //--- Utökning --- Jämförelse
             }
 
             //Output
-            if (counter > danishCounter)
+            if (counter >= danishCounter && counter>0)
             {
                 Console.WriteLine("Texten verkar vara på svenska");
             }
@@ -40,13 +40,9 @@ namespace Assignment //--- Utökning --- Jämförelse
             {
                 Console.WriteLine("Texten verkar vara på danska");
             }
-            else if (counter == 0 && danishCounter == 0)
+            else
             {
                 Console.WriteLine("Texten verkar inte vara på svenska eller danska");
-            }
-            else if (counter == danishCounter)
-            {
-                Console.WriteLine("Texten verkar vara på svenska");
             }
 
             Console.WriteLine($"Antal svenska bokstäver: {counter}, antal danska bokstäver: {danishCounter}");
