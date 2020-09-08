@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Assignment
+namespace Assignment //--- Utökning --- Jämförelse
 {
     public class Program
     {
@@ -18,7 +18,7 @@ namespace Assignment
             int counter = 0;
             int danishCounter = 0;
             
-            //Calculation
+            //Calculation 
             foreach (char letter in text)
             {
                 if (letter == 'Å' || letter == 'å' || letter == 'Ä' || letter == 'ä' || letter == 'Ö' || letter == 'ö')
