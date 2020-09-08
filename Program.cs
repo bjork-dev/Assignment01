@@ -40,9 +40,13 @@ namespace Assignment
             {
                 Console.WriteLine("Texten verkar vara på danska");
             }
-            else
+            else if (counter == 0 && danishCounter == 0)
             {
                 Console.WriteLine("Texten verkar inte vara på svenska eller danska");
+            }
+            else if (counter == danishCounter)
+            {
+                Console.WriteLine("Texten verkar vara på svenska");
             }
 
             Console.WriteLine($"Antal svenska bokstäver: {counter}, antal danska bokstäver: {danishCounter}");
@@ -83,6 +87,16 @@ namespace Assignment
             CollectionAssert.AreEqual(new[] {
             "Texten verkar inte vara på svenska eller danska",
             "Antal svenska bokstäver: 0, antal danska bokstäver: 0"
+            }, console.Lines);
+        }
+        [TestMethod]
+        public void SvenskaOchDanska()
+        {
+            using FakeConsole console = new FakeConsole("ÆÆÖö");
+            Program.Main();
+            CollectionAssert.AreEqual(new[] {
+            "Texten verkar vara på svenska",
+            "Antal svenska bokstäver: 2, antal danska bokstäver: 2"
             }, console.Lines);
         }
     }
